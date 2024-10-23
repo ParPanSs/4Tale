@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b77ccd4a7bc8d6408809e705dc619da, type: 3}
   m_Name: HealCard
   m_EditorClassIdentifier: 
+  cardState: 1
   cardType: 1
   cardCost: 3
   cardName: "\u0421\u043C\u0435\u043D\u0430 \u0445\u0432\u043E\u0441\u0442\u0430"

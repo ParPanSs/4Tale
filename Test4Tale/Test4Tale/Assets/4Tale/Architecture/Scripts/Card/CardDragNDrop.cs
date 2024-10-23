@@ -7,15 +7,18 @@ namespace _4Tale
     {
         [SerializeField] private GameObject playArrow;
         private RectTransform _rectTransform;
-        private Vector3 _startPosition;
-        private Quaternion _startRotation;
         private Vector2 _originalLocalPointerPosition;
+        private Vector3 _startPosition;
         private Vector3 _originalScale;
+        private Quaternion _startRotation;
+        private CardView _cardView;
+        private CardPlayEvent _cardPlayEvent = new();
+        private DeckController _deckController;
+        private PlayerCharacteristics _playerCharacteristics;
         private int _originalSiblingIndex;
         private float _selectedScale = 1.1f;
-        private CardView _cardView;
         
-        public void CachePosition()
+        public void Construct(DeckController deckController)
         {
             _rectTransform = GetComponent<RectTransform>();
             _startPosition = _rectTransform.localPosition;
@@ -23,6 +26,9 @@ namespace _4Tale
             _originalScale = _rectTransform.localScale;
             _originalSiblingIndex = _rectTransform.GetSiblingIndex();
             _cardView = GetComponent<CardView>();
+            _deckController = deckController;
+            _cardPlayEvent.OnCardPlayed += _deckController.FoldCardEvent;
+            _playerCharacteristics = FindObjectOfType<PlayerCharacteristics>();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -39,21 +45,21 @@ namespace _4Tale
             RestoreCardParameters();
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            
-        }
-
         public void OnEndDrag(PointerEventData eventData)
         {
             Debug.Log("End drag");
             RestoreCardParameters();
             playArrow.SetActive(false);
+            /*if (...)
+            {
+                _cardPlayEvent.InvokeEvent(_cardView.GetSelectedCard());
+            }*/
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            
+            if (_cardView.CardType != CardType.Target) return;
+            playArrow.SetActive(true);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -73,6 +79,11 @@ namespace _4Tale
             _rectTransform.localRotation = _startRotation;
             _rectTransform.localScale = _originalScale;
             _rectTransform.SetSiblingIndex(_originalSiblingIndex);
+        }
+
+        private void OnDestroy()
+        {
+            if (_deckController != null) _cardPlayEvent.OnCardPlayed -= _deckController.FoldCardEvent;
         }
     }
 }

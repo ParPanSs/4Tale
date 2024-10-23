@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b77ccd4a7bc8d6408809e705dc619da, type: 3}
   m_Name: DefenseCard
   m_EditorClassIdentifier: 
+  cardState: 2
   cardType: 1
   cardCost: 2
   cardName: "\u0421\u043F\u0440\u044F\u0442\u0430\u0442\u044C\u0441\u044F \u0432

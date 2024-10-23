@@ -9,10 +9,19 @@ namespace _4Tale
         Target,
         NonTarget,
     }
+
+    [Serializable]
+    public enum CardState
+    {
+        Attack,
+        Heal,
+        Defense,
+    }
     
     [CreateAssetMenu(fileName = "Create Card", menuName = "ScriptableObject/Create Card")]
     public class CardSO : ScriptableObject
     {
+        public CardState cardState;
         public CardType cardType;
         public int cardCost;
         public string cardName;

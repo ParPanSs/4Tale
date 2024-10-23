@@ -12,35 +12,26 @@ namespace _4Tale
         [SerializeField] private float verticalSpacing;
         [SerializeField] private List<GameObject> cards = new();
         [SerializeField] private List<CardDragNDrop> cardDragNDrop;
+        private DeckController _deckController;
 
-        private void Start()
+        public void SetDeckController(DeckController controller)
         {
-            AddCardsToHand();
-            AddCardsToHand();
-            AddCardsToHand();
-            AddCardsToHand();
-            AddCardsToHand();
-            foreach (var card in cards)
-            {
-                cardDragNDrop.Add(card.GetComponent<CardDragNDrop>());
-            }
-
-            foreach (var card in cardDragNDrop)
-            {
-                card.CachePosition();
-            }
+            _deckController = controller;
         }
-
-        private void AddCardsToHand()
+        public void AddCardsToHand()
         {
             GameObject newCard = Instantiate(cardPrefab, handPosition.position, Quaternion.identity, handPosition);
+            cardDragNDrop.Add(newCard.GetComponent<CardDragNDrop>());
             cards.Add(newCard);
-
             UpdateHandVisuals();
         }
 
         private void UpdateHandVisuals()
         {
+            foreach (var card in cardDragNDrop)
+            {
+                card.Construct(_deckController);
+            }
             int cardCount = cards.Count;
 
             if (cardCount == 1)
