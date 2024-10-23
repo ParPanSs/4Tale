@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace _4Tale
 {
+    [Serializable]
     public enum CardType
     {
         Target,
