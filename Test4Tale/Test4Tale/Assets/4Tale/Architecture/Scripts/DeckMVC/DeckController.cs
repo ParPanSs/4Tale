@@ -10,10 +10,10 @@ namespace _4Tale
         private DeckView _deckView;
         private DeckModel _deckModel = new();
 
-        public void Construct(DeckView deckView, List<CardSO> startDeck)
+        public void Construct(DeckView deckView, List<CardSO> startDeck, List<CardSO> foldDeck)
         {
             _deckView = deckView;
-            _deckModel.SetTakeDeck(startDeck);
+            _deckModel.SetDecks(startDeck, foldDeck);
             TakeCards(5);
         }
         
@@ -48,7 +48,7 @@ namespace _4Tale
                 _deckModel.GetFoldDeck()[r] = tmp;
             }
 
-            _deckModel.SetTakeDeck(_deckModel.GetFoldDeck());
+            _deckModel.SwapDecks();
             _deckModel.GetFoldDeck().Clear();
             UpdateCounters();
         }

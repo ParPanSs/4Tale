@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b77ccd4a7bc8d6408809e705dc619da, type: 3}
   m_Name: AttackCard
   m_EditorClassIdentifier: 
+  cardState: 0
   cardType: 0
+  cardSprite: {fileID: 21300000, guid: bde4c30fb153a8f4cb0d75ee55454e2c, type: 3}
   cardCost: 1
   cardName: "\u0414\u043E\u0441\u0442\u0430\u0442\u044C \u043D\u043E\u0436\u0438"
   cardDescription: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 5 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430."
-  cardSprite: {fileID: 21300000, guid: bde4c30fb153a8f4cb0d75ee55454e2c, type: 3}
+  cardValue: 5

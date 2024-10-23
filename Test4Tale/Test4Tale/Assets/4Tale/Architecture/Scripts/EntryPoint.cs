@@ -12,6 +12,7 @@ namespace _4Tale
         [SerializeField] private List<CardSO> allCards;
 
         private List<CardSO> _startDeck = new();
+        private List<CardSO> _foldDeck = new();
 
         private DeckController _deckController = new();
 
@@ -24,7 +25,7 @@ namespace _4Tale
             handVisual.SetDeckController(_deckController);
 
             playerCharacteristics.Construct();
-            _deckController.Construct(deckView, _startDeck);
+            _deckController.Construct(deckView, _startDeck, _foldDeck);
         }
     }
 }

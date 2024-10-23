@@ -23,10 +23,11 @@ namespace _4Tale
     {
         public CardState cardState;
         public CardType cardType;
+        public Sprite cardSprite;
         public int cardCost;
         public string cardName;
         [TextArea(3,5)]
         public string cardDescription;
-        public Sprite cardSprite;
+        public int cardValue;
     }
 }

@@ -23,10 +23,9 @@ namespace _4Tale
             GameObject newCard = Instantiate(cardPrefab, handPosition.position, Quaternion.identity, handPosition);
             cardDragNDrop.Add(newCard.GetComponent<CardDragNDrop>());
             cards.Add(newCard);
-            UpdateHandVisuals();
         }
 
-        private void UpdateHandVisuals()
+        public void UpdateHandVisuals()
         {
             foreach (var card in cardDragNDrop)
             {

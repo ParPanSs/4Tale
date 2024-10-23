@@ -11,6 +11,8 @@ namespace _4Tale
         [SerializeField] private TextMeshProUGUI cardName;
         [SerializeField] private TextMeshProUGUI cardDescription;
         [SerializeField] private Image cardSprite;
+
+        public int CardValue { get; private set; }
         public CardType CardType { get; private set; }
         public CardState CardState { get; private set; }
         private CardSO _selectedCard;
@@ -21,6 +23,7 @@ namespace _4Tale
             cardName.text = _selectedCard.cardName;
             cardDescription.text = _selectedCard.cardDescription;
             cardSprite.sprite = _selectedCard.cardSprite;
+            CardValue = _selectedCard.cardValue;
             CardType = _selectedCard.cardType;
             CardState = _selectedCard.cardState;
         }

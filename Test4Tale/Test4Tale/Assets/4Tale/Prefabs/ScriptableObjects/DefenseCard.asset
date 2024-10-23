@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardState: 2
   cardType: 1
+  cardSprite: {fileID: 21300000, guid: 117b7dc97fad3a348a44b4bdda04f09d, type: 3}
   cardCost: 2
   cardName: "\u0421\u043F\u0440\u044F\u0442\u0430\u0442\u044C\u0441\u044F \u0432
     \u043F\u0430\u043D\u0446\u0438\u0440\u044C"
   cardDescription: "\u0414\u0430\u0435\u0442 5 \u0435\u0434. \u0431\u0440\u043E\u043D\u0438. "
-  cardSprite: {fileID: 21300000, guid: 117b7dc97fad3a348a44b4bdda04f09d, type: 3}
+  cardValue: 5

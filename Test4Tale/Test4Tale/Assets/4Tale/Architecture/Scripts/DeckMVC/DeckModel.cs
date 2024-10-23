@@ -5,11 +5,12 @@ namespace _4Tale
     public class DeckModel
     {
         private List<CardSO> _takeDeck;
-        private List<CardSO> _foldDeck = new();
+        private List<CardSO> _foldDeck;
 
-        public void SetTakeDeck(List<CardSO> takeDeck)
+        public void SetDecks(List<CardSO> takeDeck, List<CardSO> foldDeck)
         {
             _takeDeck = takeDeck;
+            _foldDeck = foldDeck;
         }
 
         public List<CardSO> GetTakeDeck()
@@ -29,6 +30,11 @@ namespace _4Tale
         public void AddCardToDeck(List<CardSO> deck, CardSO card)
         {
             deck.Add(card);
+        }
+
+        public void SwapDecks()
+        {
+            _foldDeck = _takeDeck;
         }
     }
 }

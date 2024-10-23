@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -48,12 +49,30 @@ namespace _4Tale
         public void OnEndDrag(PointerEventData eventData)
         {
             Debug.Log("End drag");
-            RestoreCardParameters();
+            if (_cardView.CardType == CardType.NonTarget)
+            {
+                switch (_cardView.CardState)
+                {
+                    case CardState.Defense:
+                        Debug.Log("Def");
+                        _playerCharacteristics.ArmorHP += _cardView.CardValue;
+                        break;
+                    case CardState.Heal:
+                        Debug.Log("Heal");
+                        _playerCharacteristics.HP += _cardView.CardValue;
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+                _cardPlayEvent.InvokeEvent(_cardView.GetSelectedCard());
+                Destroy(gameObject);
+            }
             playArrow.SetActive(false);
             /*if (...)
             {
                 _cardPlayEvent.InvokeEvent(_cardView.GetSelectedCard());
             }*/
+            RestoreCardParameters();
         }
 
         public void OnPointerDown(PointerEventData eventData)

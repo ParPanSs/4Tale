@@ -21,6 +21,8 @@ namespace _4Tale
             {
                 handVisual.AddCardsToHand();
             }
+            handVisual.UpdateHandVisuals();
         }
+        
     }
 }
