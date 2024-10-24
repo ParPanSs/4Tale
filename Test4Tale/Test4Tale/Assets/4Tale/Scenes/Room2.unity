@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477846214580708848, guid: f568e3178a40f1645a75c8cfa17bf6fc, type: 3}
+      propertyPath: enemyDestroyer
+      value: 
+      objectReference: {fileID: 783741870}
     - target: {fileID: 8062035260016731494, guid: f568e3178a40f1645a75c8cfa17bf6fc, type: 3}
       propertyPath: m_fontSize
       value: 30
@@ -530,6 +534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477846214580708848, guid: f568e3178a40f1645a75c8cfa17bf6fc, type: 3}
+      propertyPath: enemyDestroyer
+      value: 
+      objectReference: {fileID: 783741870}
     - target: {fileID: 8062035260016731494, guid: f568e3178a40f1645a75c8cfa17bf6fc, type: 3}
       propertyPath: m_fontSize
       value: 30
@@ -626,6 +634,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.22102515, y: -0.8015169, z: 0.026626239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &783741869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783741871}
+  - component: {fileID: 783741870}
+  m_Layer: 0
+  m_Name: EnemyDestroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &783741870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783741869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e97adcd393d400bb6846e6b59376ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCharacteristics:
+  - {fileID: 459868748}
+  - {fileID: 167904170}
+--- !u!4 &783741871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783741869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8581123, y: -0.7747529, z: -0.08874964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1006,7 +1061,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacteristics: {fileID: 1667363874}
-  enemyCharacteristics: {fileID: 459868748}
+  enemyCharacteristics:
+  - {fileID: 459868748}
+  - {fileID: 167904170}
   playerHpText: {fileID: 1667363876}
   playerArmorText: {fileID: 1667363875}
   playerEnergyText: {fileID: 212048818}
@@ -1104,3 +1161,4 @@ SceneRoots:
   - {fileID: 1778646501}
   - {fileID: 2053998343}
   - {fileID: 381790466}
+  - {fileID: 783741871}

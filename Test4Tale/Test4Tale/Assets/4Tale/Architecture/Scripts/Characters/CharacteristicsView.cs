@@ -6,7 +6,7 @@ namespace _4Tale
     public class CharacteristicsView : MonoBehaviour
     {
         [SerializeField] private PlayerCharacteristics playerCharacteristics;
-        [SerializeField] private EnemyCharacteristics enemyCharacteristics;
+        [SerializeField] private EnemyCharacteristics[] enemyCharacteristics;
         
         [SerializeField] private TextMeshProUGUI playerHpText;
         [SerializeField] private TextMeshProUGUI playerArmorText;
@@ -21,8 +21,8 @@ namespace _4Tale
             playerEnergyText.text = playerCharacteristics.Energy.ToString();
             for (int i = 0; i < enemyHpText.Length; i++)
             {
-                enemyHpText[i].text = $"HP: {enemyCharacteristics.HP}";
-                enemyArmorText[i].text = $"Armor: {enemyCharacteristics.ArmorHP}";
+                enemyHpText[i].text = $"HP: {enemyCharacteristics[i].HP}";
+                enemyArmorText[i].text = $"Armor: {enemyCharacteristics[i].ArmorHP}";
             }
         }
     }

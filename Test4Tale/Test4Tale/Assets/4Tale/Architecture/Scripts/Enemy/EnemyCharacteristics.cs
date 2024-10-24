@@ -8,6 +8,7 @@ namespace _4Tale
         [SerializeField] private int enemyAttack;
         [SerializeField] private int enemyArmor;
         [SerializeField] private EnemyBehaviour enemyBehaviour;
+        [SerializeField] private EnemyDestroyer enemyDestroyer;
         public int HP { get; set; }
         public int ArmorHP { get; set; }
 
@@ -35,7 +36,8 @@ namespace _4Tale
 
             if (HP <= 0)
             {
-                Destroy(gameObject);
+                enemyDestroyer.DestroyEnemy();
+                gameObject.SetActive(false);
             }
         }
 

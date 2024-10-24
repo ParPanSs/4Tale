@@ -200,12 +200,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacteristics: {fileID: 1276079642}
-  enemyCharacteristics: {fileID: 2115028004}
+  enemyCharacteristics:
+  - {fileID: 2115028004}
   playerHpText: {fileID: 567503968}
   playerArmorText: {fileID: 883985937}
   playerEnergyText: {fileID: 1303865073}
-  enemyHpText: {fileID: 1348676311}
-  enemyArmorText: {fileID: 549939629}
+  enemyHpText:
+  - {fileID: 1348676311}
+  enemyArmorText:
+  - {fileID: 549939629}
 --- !u!4 &212495904
 Transform:
   m_ObjectHideFlags: 0
@@ -346,6 +349,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25800738751875343a61321d194c1af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &868250897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 868250899}
+  - component: {fileID: 868250898}
+  m_Layer: 0
+  m_Name: EnemyDestroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &868250898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868250897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e97adcd393d400bb6846e6b59376ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCharacteristics:
+  - {fileID: 2115028004}
+--- !u!4 &868250899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868250897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8581123, y: -0.7747529, z: -0.08874964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &883985937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4820327182116974724, guid: 903555f197220794c97297ba39c324dc, type: 3}
@@ -744,10 +793,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2118636453587380738, guid: bbfe8b83c44cbf24e859fb32c791ea78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2874247623479799697, guid: bbfe8b83c44cbf24e859fb32c791ea78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1859665513}
+    - target: {fileID: 4380069541956475755, guid: bbfe8b83c44cbf24e859fb32c791ea78, type: 3}
+      propertyPath: handVisual
+      value: 
+      objectReference: {fileID: 718970377}
     - target: {fileID: 7002622985431017268, guid: bbfe8b83c44cbf24e859fb32c791ea78, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -889,6 +946,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477846214580708848, guid: f568e3178a40f1645a75c8cfa17bf6fc, type: 3}
+      propertyPath: enemyDestroyer
+      value: 
+      objectReference: {fileID: 868250898}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -908,3 +969,4 @@ SceneRoots:
   - {fileID: 212495904}
   - {fileID: 1728306246}
   - {fileID: 1859665514}
+  - {fileID: 868250899}
