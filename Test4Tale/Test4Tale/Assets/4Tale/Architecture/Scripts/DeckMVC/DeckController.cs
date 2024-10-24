@@ -19,7 +19,9 @@ namespace _4Tale
         
         public void TakeCards(int count)
         {
-            for (var i = 0; i < count; i++)
+            if (count > _deckModel.GetTakeDeck().Count) 
+                ShuffleDeck();
+            for (var i = count - 1; i >= 0; i--)
             {
                 _deckModel.RemoveCardFromDeck(_deckModel.GetTakeDeck(), _deckModel.GetTakeDeck()[i]);
             }

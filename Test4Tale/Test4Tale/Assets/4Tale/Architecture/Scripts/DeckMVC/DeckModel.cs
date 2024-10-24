@@ -4,8 +4,8 @@ namespace _4Tale
 {
     public class DeckModel
     {
-        private List<CardSO> _takeDeck;
-        private List<CardSO> _foldDeck;
+        private List<CardSO> _takeDeck = new();
+        private List<CardSO> _foldDeck = new();
 
         public void SetDecks(List<CardSO> takeDeck, List<CardSO> foldDeck)
         {
@@ -25,6 +25,11 @@ namespace _4Tale
 
         public void RemoveCardFromDeck(List<CardSO> deck, CardSO card)
         {
+            if (deck.Count == 1)
+            {
+                deck.Clear();
+                return;
+            }
             deck.Remove(card);
         }
         public void AddCardToDeck(List<CardSO> deck, CardSO card)
@@ -34,7 +39,7 @@ namespace _4Tale
 
         public void SwapDecks()
         {
-            _foldDeck = _takeDeck;
+            _takeDeck.AddRange(_foldDeck);
         }
     }
 }

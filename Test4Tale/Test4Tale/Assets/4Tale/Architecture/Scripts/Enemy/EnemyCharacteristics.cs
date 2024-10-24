@@ -3,15 +3,17 @@ using UnityEngine.SceneManagement;
 
 namespace _4Tale
 {
-    public class PlayerCharacteristics : MonoBehaviour, ICharacteristics
+    public class EnemyCharacteristics : MonoBehaviour, ICharacteristics
     {
-        public int Energy { get; private set; }
+        [SerializeField] private int enemyAttack;
+        [SerializeField] private int enemyArmor;
+        [SerializeField] private EnemyBehaviour enemyBehaviour;
         public int HP { get; set; }
         public int ArmorHP { get; set; }
 
         public void Construct()
         {
-            HP = 100;
+            HP = 10;
             ArmorHP = 0;
         }
         
@@ -34,13 +36,12 @@ namespace _4Tale
             if (HP <= 0)
             {
                 Destroy(gameObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
-        public void SetEnergy(int energy)
+        public void SetEnemyBehaviour()
         {
-            Energy = energy;
+            enemyBehaviour.SetBehaviour(enemyAttack, enemyArmor);
         }
     }
 }
